@@ -15,19 +15,18 @@ public class Cofrinho {
 	
 	public void listagemMoedas() {
 		for(Moeda moeda : listaMoedas) {
-			moeda.info();
+			System.out.println(moeda.valor);
 		}
 	}
 	
 	public double totalConvertido() {
 		double valorTotal = 0;
 		for(Moeda moeda: listaMoedas) {
-			if(moeda instanceof Euro && moeda instanceof Dolar) {
+			if(moeda instanceof Euro || moeda instanceof Dolar) {
 				moeda.converter();
 			}
 			valorTotal += moeda.valor;
 		}
 		return valorTotal;
 	}
-
 }
